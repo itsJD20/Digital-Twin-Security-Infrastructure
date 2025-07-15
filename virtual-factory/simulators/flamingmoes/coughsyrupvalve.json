@@ -1,0 +1,64 @@
+{
+  "simulator_connector_client": {
+    "type": "mqtt",
+    "mqtt": {
+      "host": "mosquitto",
+      "port": 1883
+    }
+  },
+  "industrial_connector_client": {
+    "type": "modbus",
+    "modbus": {
+      "host": "openplc",
+      "port": 502,
+      "slave": 1
+    }
+  },
+  "simulator_names": [
+    "coughsyrupvalve"
+  ],
+  "coughsyrupvalve": {
+    "type": "valve",
+    "logging": {
+      "logging": true,
+      "type": "opensearch",
+      "opensearch": {
+        "host": "opensearch",
+        "port": 9200,
+        "user": "admin",
+        "password": "admin",
+        "use_ssl" : false,
+        "verify_certs" : false,
+        "index": "factory-log-coughsyrupvalve",
+        "max_size_cache" : 10
+      }
+    },
+    "inputs": [
+      "coughsyrup"
+    ],
+    "outputs": [
+      "mixtank2"
+    ],
+    "output_level": 100,
+    "mapper_industry_properties": {
+      "write": {
+        "open": {
+          "map": 811,
+          "type": "coil"
+        }
+      },
+      "read": {
+        "open": {
+          "map": 810,
+          "type": "coil"
+        }
+      }
+    }
+  }
+  ,
+  "ditto": {
+    "openplc_thing_id":"openplc:7e41fb8d-aeaf-413a-94e7-bb43521e7f77",
+    "hmi_thing_id":"hmi:33ecfb94-9c7a-4cce-95bd-85f549bf6365"
+  }
+
+}

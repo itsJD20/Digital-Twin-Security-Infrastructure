@@ -1,0 +1,7 @@
+requests==2.32.3
+pymodbus==3.2.2
+paho-mqtt==1.6.1
+numpy==1.24.3
+opensearch-py==2.4.2
+simplejson==3.19.2
+cryptography==41.0.2

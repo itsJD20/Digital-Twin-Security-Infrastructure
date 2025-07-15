@@ -1,0 +1,49 @@
+{
+	"data_to_export": {
+		"sources": [
+			{
+				"source_url": "http://127.0.0.1:8080/api/2",
+				"source_name": "local_ditto",
+				"auth_header": "Basic ZGl0dG86ZGl0dG8=",
+				"things": [
+					{
+						"thing_id": "openplc:103b3864-923d-49d0-8f1c-8c6810a025c3",
+						"downtime": {
+							"start": "2025-07-10T00:00:00",
+							"end": "2025-07-11T00:00:00"
+						},
+						"features": [
+							{
+								"feature_id": "coughsyrupvalve",
+								"properties": ["open","timestamp"]
+							}
+						]
+					},
+					{
+						"thing_id": "hmi:bbf883ed-b192-4fb2-b432-41664e91d059",
+						"downtime": {
+							"start": "2025-07-01T00:00:00",
+							"end": "2025-07-02T00:00:00"
+						},
+						"features": [
+							{
+								"feature_id": "coughsyrupvalve",
+								"properties": ["input_level", "input_blocked", "output_level", "output_blocked","timestamp"]
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	"basyx": {
+		"url": "http://127.0.0.1:8091"
+	},
+	"security": {
+		"verify_signatures": true,
+		"public_key_path": "public_key.pem"
+	},
+	"logging": {
+		"log_filtered_items": true
+	}
+}
